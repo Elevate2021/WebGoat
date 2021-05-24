@@ -1,0 +1,22 @@
+apiVersion: "v1"
+kind: "Pod"
+metadata:
+  labels:
+    label: "hub-cli"
+spec:
+  containers:
+  - args:
+    - "cat"
+    command:
+    - "/bin/sh"
+    - "-c"
+    image: "tianon/github-hub:2.6"
+    name: "hub"
+    tty: true
+    env:
+    - name: "GITHUB_TOKEN"
+      valueFrom:
+        secretKeyRef:
+          key: "GITHUB_TOKEN"
+          name: "gh-token"
+          optional: false
