@@ -27,3 +27,4 @@ spec:
     - name: mvn-pv-claim
       persistentVolumeClaim:
         claimName: mvn-pv-claim
+# Make sure kubectl create -f kubernetes-agents/mvn-pvc.yaml is executed and secret is created ➜  ~ kubectl create secret generic settings-xml --from-file=~/.m2/settings.xml -n internal-tools
